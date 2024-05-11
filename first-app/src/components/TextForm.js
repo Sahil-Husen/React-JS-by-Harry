@@ -9,7 +9,7 @@ export default function TextForm(props) {
     const [text, setText] = useState('')
     const [wordCount, setWordCount] = useState(0);
     const [charCount, setCharCount] = useState(0);
-    
+
 
     // text = "new text" this is a wrong w  ay to change the TEXT VARIABLE OR STATE IN REACT JS
     // setText("New text here")
@@ -18,9 +18,9 @@ export default function TextForm(props) {
     const handlerUpClick = () => {
         // console.log(" Uppercase button clicked")
         let newText = text.toUpperCase();
-         
+
         setText(newText)
-         
+
     }
     const handlerOnClick = (event) => {
         setText(event.target.value);
@@ -67,7 +67,7 @@ export default function TextForm(props) {
     const handlerCopy = () => {
         let copyText = document.getElementById('my-box');
         let textToCopy = copyText.value.trim(); // Remove leading and trailing whitespace
-    
+
         if (textToCopy) { // Check if there is non-empty text to copy
             copyText.select();
             navigator.clipboard.writeText(textToCopy)
@@ -81,11 +81,11 @@ export default function TextForm(props) {
             alert('No text available to copy!');
         }
     }
-    
+
 
     // Extra Space Remover
-    const handlerSpace=()=>{
-        let textSpace =  text.split(/[ ]+/ );
+    const handlerSpace = () => {
+        let textSpace = text.split(/[ ]+/);
         setText(textSpace.join(' '))
 
     }
@@ -95,8 +95,8 @@ export default function TextForm(props) {
         let boldText = document.getElementById('my-box');
         boldText.style.fontWeight = 'bold'; // Change '200px' to 'bold' to set the font weight
     }
-    
-    
+
+
 
 
     return (
@@ -110,16 +110,16 @@ export default function TextForm(props) {
 
                 <button className='btn btn-info mx-2' onClick={handlerUpClick} onDoubleClick={handlerLowClick}>Change to UppperCase</button>
                 <button className='btn btn-info mx-3' onClick={handlerReset}>Clear</button>
-                <button className='btn btn-info mx-2 my-4'  onClick={handlerCopy}>Copy</button>
-                <button className='btn btn-info mx-2 my-4'  onClick={handlerSpace}>Remove Extra Space</button>
-                <button className='btn btn-info mx-2 my-4'  onClick={handlerBold}>Bold</button>
+                <button className='btn btn-info mx-2 my-4' onClick={handlerCopy}>Copy</button>
+                <button className='btn btn-info mx-2 my-4' onClick={handlerSpace}>Remove Extra Space</button>
+                <button className='btn btn-info mx-2 my-4' onClick={handlerBold}>Bold</button>
 
 
             </div>
             <div className="container my-3 summary">
                 <h2>Your Text Summary</h2>
                 <p>{wordCount} words and {charCount} characters.</p>
-                <p>{0.008* text.split(" ").length} Minutes Required to read.</p>
+                <p>{0.008 * text.split(" ").length} Minutes Required to read.</p>
             </div>
 
         </>

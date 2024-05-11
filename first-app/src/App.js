@@ -7,7 +7,7 @@ function App() {
   return (
    <>
    {/* Here I AM CREATING A PROPS Title ='any props' */}
-   <Navbar title="WordUtilizer" about="About" ></Navbar>
+   <Navbar title="Text_Utilizer" about="About" ></Navbar>
    <div className="container">
 
     <TextForm className='container ' heading='This is a Word Analyzer by Sahil.'></TextForm>
