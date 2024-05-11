@@ -96,7 +96,10 @@ export default function TextForm(props) {
         boldText.style.fontWeight = 'bold'; // Change '200px' to 'bold' to set the font weight
     }
 
-
+    const handlerdoubleClick= ()=>{
+        let textBold = document.getElementById('my-box')
+        textBold.style.fontWeight = '400';
+    }
 
 
     return (
@@ -112,7 +115,7 @@ export default function TextForm(props) {
                 <button className='btn btn-info mx-3' onClick={handlerReset}>Clear</button>
                 <button className='btn btn-info mx-2 my-4' onClick={handlerCopy}>Copy</button>
                 <button className='btn btn-info mx-2 my-4' onClick={handlerSpace}>Remove Extra Space</button>
-                <button className='btn btn-info mx-2 my-4' onClick={handlerBold}>Bold</button>
+                <button className='btn btn-info mx-2 my-4' onClick={handlerBold} onDoubleClick={handlerdoubleClick}>Bold</button>
 
 
             </div>
