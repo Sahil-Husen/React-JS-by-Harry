@@ -8,7 +8,7 @@ export default function Navbar(props) {
         <div className='navColor '>
             <>
 
-                <nav className="navbar  navbar-expand-lg bg-body-tertiary">
+                <nav className={`navbar  navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
                     <div className="container-fluid ">
                         {/* here I am calling a props or importing a props */}
                         <a className="navbar-brand" href='/'>{props.title}</a>
@@ -25,10 +25,18 @@ export default function Navbar(props) {
                                     <a className="nav-link" href='/'>{props.about}</a>
                                 </li>
                             </ul>
-                            <form className="d-flex" role="search">
+                            {/* <form className="d-flex" role="search">
                                 <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
                                 <button className="btn btn-outline-success" type="submit">Search</button>
-                            </form>
+                               
+                            </form> */}
+
+                            <div className={`form-check form-switch mx-2  text-${props.mode === 'light' ? 'dark' : 'light'}`}>
+                                <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onClick={props.toggleMode} />
+                                <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Dark Mode</label>
+                            </div>
+
+
                         </div>
                     </div>
                 </nav>
@@ -43,8 +51,8 @@ export default function Navbar(props) {
 
 Navbar.propTypes = {
     name: PropTypes.string.isRequired,
-    about: PropTypes.number.isRequired, // Example: string prop
-    // Add more PropTypes for other props here
+    about: PropTypes.string.isRequired, // Example: string prop
+    // Add more PropTypes htmlFor other props here
 }
 
 //   Default props

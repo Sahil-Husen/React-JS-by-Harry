@@ -108,7 +108,7 @@ export default function TextForm(props) {
                 <h1> {props.heading} </h1>
                 <div className="mb-3">
                     {/* // IF WE NOT USE THEN IT IMOSSIBLE TO WRITE ON THE TEXT BOX */}
-                    <textarea value={text} onChange={handlerOnClick} className="form-control fs-2" id="my-box" rows="7"></textarea>
+                    <textarea style={{backgroundColor:props.mode ==='dark'?'rgb(41 100 158)':'white',color:props.mode ==='dark'?'':'rgb(41 100 158)'}} value={text} onChange={handlerOnClick} className="form-control fs-2" id="my-box" rows="7" ></textarea>
                 </div>
 
                 <button className='btn btn-info mx-2' onClick={handlerUpClick} onDoubleClick={handlerLowClick}>Change to UppperCase</button>
